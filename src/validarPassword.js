@@ -5,6 +5,10 @@ function validarPassword(password, usernameOpcional) {
     errores.push("Debe tener al menos 8 caracteres");
   }
 
+  if (password === password.toLowerCase()) {
+  errores.push("Debe contener al menos una mayuscula");
+}
+
   return { esValida: errores.length === 0, errores };
 }
 
