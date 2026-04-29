@@ -88,7 +88,7 @@ test("C15 - password con varios errores retorna todos los errores", () => {
   const resultado = validarPassword("abc");
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("Debe tener al menos 8 caracteres");
-  expect(resultado.errores).toContain("Debe contener al menos una mayúscula");
-  expect(resultado.errores).toContain("Debe contener al menos un número");
-  expect(resultado.errores).toContain("Debe contener al menos un símbolo especial");
+  expect(resultado.errores).toContain("Debe contener al menos una mayuscula");
+  expect(resultado.errores).toContain("Debe contener al menos un numero");
+  expect(resultado.errores).toContain("Debe contener al menos un simbolo especial");
 });
