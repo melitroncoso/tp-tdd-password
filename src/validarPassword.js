@@ -9,9 +9,13 @@ function validarPassword(password, usernameOpcional) {
   errores.push("Debe contener al menos una mayuscula");
 }
 
-if (password === password.toUpperCase()) {
-  errores.push("Debe contener al menos una minuscula");
-}
+  if (password === password.toUpperCase()) {
+    errores.push("Debe contener al menos una minuscula");
+  }
+
+  if (!password.split("").some(c => c >= "0" && c <= "9")) {
+    errores.push("Debe contener al menos un numero");
+  }
 
   return { esValida: errores.length === 0, errores };
 }

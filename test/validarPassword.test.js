@@ -17,3 +17,9 @@ test("C3 - sin minuscula retorna error", () => {
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("Debe contener al menos una minuscula");
 });
+
+test("C4 - sin numero retorna error", () => {
+  const resultado = validarPassword("Abcdefg!");
+  expect(resultado.esValida).toBe(false);
+  expect(resultado.errores).toContain("Debe contener al menos un numero");
+});
