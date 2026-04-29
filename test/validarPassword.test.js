@@ -77,3 +77,9 @@ test("C13 - tres símbolos iguales consecutivos retorna error", () => {
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("No debe contener 3 caracteres iguales consecutivos");
 });
+
+test("C14 - dos caracteres iguales consecutivos es válido", () => {
+  const resultado = validarPassword("Abbc123!");
+  expect(resultado.esValida).toBe(true);
+  expect(resultado.errores).not.toContain("No debe contener 3 caracteres iguales consecutivos");
+});
