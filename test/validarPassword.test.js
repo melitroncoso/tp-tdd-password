@@ -59,3 +59,9 @@ test("C10 - sin username no valida esa regla", () => {
   expect(resultado.esValida).toBe(true);
   expect(resultado.errores).not.toContain("No debe contener el nombre de usuario");
 });
+
+test("C11 - tres caracteres iguales consecutivos retorna error", () => {
+  const resultado = validarPassword("Aaaab123!");
+  expect(resultado.esValida).toBe(false);
+  expect(resultado.errores).toContain("No debe contener 3 caracteres iguales consecutivos");
+});

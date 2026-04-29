@@ -32,6 +32,19 @@ function validarPassword(password, usernameOpcional) {
     errores.push("No debe contener el nombre de usuario");
   }
 
+  let tieneConsecutivos = false;
+  for (let i = 0; i < password.length - 2; i++) {
+    if (password[i] === password[i + 1] && password[i] === password[i + 2]) {
+      tieneConsecutivos = true;
+      break;
+    }
+  }
+
+  if (tieneConsecutivos) {
+    errores.push("No debe contener 3 caracteres iguales consecutivos");
+  }
+
+
   return { esValida: errores.length === 0, errores };
 }
 
