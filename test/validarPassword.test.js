@@ -47,3 +47,9 @@ test("C8 - password contiene username retorna error", () => {
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("No debe contener el nombre de usuario");
 });
+
+test("C9 - password contiene username en mayusculas retorna error", () => {
+  const resultado = validarPassword("Abc1234!JUAN", "juan");
+  expect(resultado.esValida).toBe(false);
+  expect(resultado.errores).toContain("No debe contener el nombre de usuario");
+});
