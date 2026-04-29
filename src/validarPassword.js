@@ -28,6 +28,10 @@ function validarPassword(password, usernameOpcional) {
     errores.push("No debe contener espacios");
   }
 
+  if (usernameOpcional && password.toLowerCase().includes(usernameOpcional.toLowerCase())) {
+    errores.push("No debe contener el nombre de usuario");
+  }
+
   return { esValida: errores.length === 0, errores };
 }
 
