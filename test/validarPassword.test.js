@@ -53,3 +53,9 @@ test("C9 - password contiene username en mayusculas retorna error", () => {
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("No debe contener el nombre de usuario");
 });
+
+test("C10 - sin username no valida esa regla", () => {
+  const resultado = validarPassword("Abc1234!");
+  expect(resultado.esValida).toBe(true);
+  expect(resultado.errores).not.toContain("No debe contener el nombre de usuario");
+});
