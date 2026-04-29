@@ -29,3 +29,9 @@ test("C5 - sin simbolo especial retorna error", () => {
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("Debe contener al menos un simbolo especial");
 });
+
+test("C6 - con espacio retorna error", () => {
+  const resultado = validarPassword("Abc 123!");
+  expect(resultado.esValida).toBe(false);
+  expect(resultado.errores).toContain("No debe contener espacios");
+});

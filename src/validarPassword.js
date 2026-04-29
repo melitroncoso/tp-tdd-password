@@ -24,6 +24,10 @@ function validarPassword(password, usernameOpcional) {
     errores.push("Debe contener al menos un simbolo especial");
   }
 
+  if (password.includes(" ")) {
+    errores.push("No debe contener espacios");
+  }
+
   return { esValida: errores.length === 0, errores };
 }
 
