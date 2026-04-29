@@ -83,3 +83,12 @@ test("C14 - dos caracteres iguales consecutivos es válido", () => {
   expect(resultado.esValida).toBe(true);
   expect(resultado.errores).not.toContain("No debe contener 3 caracteres iguales consecutivos");
 });
+
+test("C15 - password con varios errores retorna todos los errores", () => {
+  const resultado = validarPassword("abc");
+  expect(resultado.esValida).toBe(false);
+  expect(resultado.errores).toContain("Debe tener al menos 8 caracteres");
+  expect(resultado.errores).toContain("Debe contener al menos una mayúscula");
+  expect(resultado.errores).toContain("Debe contener al menos un número");
+  expect(resultado.errores).toContain("Debe contener al menos un símbolo especial");
+});
