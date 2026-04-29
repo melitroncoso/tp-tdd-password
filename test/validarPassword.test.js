@@ -23,3 +23,9 @@ test("C4 - sin numero retorna error", () => {
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("Debe contener al menos un numero");
 });
+
+test("C5 - sin simbolo especial retorna error", () => {
+  const resultado = validarPassword("Abcdef1g");
+  expect(resultado.esValida).toBe(false);
+  expect(resultado.errores).toContain("Debe contener al menos un simbolo especial");
+});

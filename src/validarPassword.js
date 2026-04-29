@@ -17,6 +17,13 @@ function validarPassword(password, usernameOpcional) {
     errores.push("Debe contener al menos un numero");
   }
 
+  const simbolos = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+  const tieneSimbolos = password.split("").some(c => simbolos.includes(c));
+
+  if (!tieneSimbolos) {
+    errores.push("Debe contener al menos un simbolo especial");
+  }
+
   return { esValida: errores.length === 0, errores };
 }
 
