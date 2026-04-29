@@ -11,3 +11,9 @@ test("C2 - sin mayúscula retorna error", () => {
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("Debe contener al menos una mayuscula");
 });
+
+test("C3 - sin minuscula retorna error", () => {
+  const resultado = validarPassword("ABC1234!");
+  expect(resultado.esValida).toBe(false);
+  expect(resultado.errores).toContain("Debe contener al menos una minuscula");
+});
