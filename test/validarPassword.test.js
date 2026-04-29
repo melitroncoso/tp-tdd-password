@@ -35,3 +35,9 @@ test("C6 - con espacio retorna error", () => {
   expect(resultado.esValida).toBe(false);
   expect(resultado.errores).toContain("No debe contener espacios");
 });
+
+test("C7 - contrasenia valida retorna esValida true", () => {
+  const resultado = validarPassword("Abc1234!");
+  expect(resultado.esValida).toBe(true);
+  expect(resultado.errores).toHaveLength(0);
+});
